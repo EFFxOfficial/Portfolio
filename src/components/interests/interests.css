@@ -1,0 +1,138 @@
+.interests__container{
+  margin-block: 3rem 0;
+}
+
+.interests__container-interests_container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    margin-inline: auto;
+    width: 80%;
+}
+
+.interests__container-interests_container:nth-child(even){
+    transform: translateX(-100px)
+}
+
+.interests__container-interest{
+    display: flex;
+    align-items: center;
+}
+
+.interests__container-interest{
+    border-radius: 20px;
+    z-index: 10
+}
+
+.interests__container-interest_count{
+    padding: .5rem 1rem;
+    height: 100px;
+    min-width: 120px;
+    box-shadow: 2px 5px 10px rgb(65, 64, 64);
+    background: white;
+    border-radius: 20px;
+    z-index: 999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.interests__container-interest_description{
+    color: white;
+    font-family: var(--font-family);
+    padding: 1rem;
+    height: 100px;
+}
+
+.interests__container-interests_container.active:nth-child(odd){
+    animation: from-left2 500ms ease-in forwards;
+}
+
+.interests__container-interests_container.active:nth-child(even){
+    animation: from-right2 500ms ease-in forwards;
+}
+
+@keyframes from-right2{
+    from{
+      transform: translateX(150px);
+      opacity: 0;
+    }
+    to{
+      transform: translateX(-50px);
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes from-right2{
+    from{
+      transform: translateX(150px);
+      opacity: 0;
+    }
+    to{
+      transform: translateX(-50px);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes from-left2{
+    from{
+      transform: translateX(-150px);
+      opacity: 0;
+    }
+    to{
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes from-left2{
+    from{
+      transform: translateX(-150px);
+      opacity: 0;
+    }
+    to{
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+
+@media screen and (max-width: 1050px){
+    .interests__container-interests_container {
+        width: 100%;
+    }
+
+    .interests__container-interests_container.active:nth-child(even){
+      animation: default-pos 100 forwards;
+    }
+}
+
+@media screen and (max-width: 540px){
+    .interests__container-interest_description {
+        padding: 1rem;
+        font-size: 12px;
+    }
+
+    .interests__container-interest_count{
+      font-size: 20px;
+      min-width: 80px;
+    }
+
+    .interests__container-interest_count,
+    .interests__container-interest_description{
+      height: 80px;
+    }
+}
+
+@media screen and (max-width: 410px){
+    .interests__container-interest_description {
+        font-size: 10px;
+    }
+}
+
+@keyframes default-pos{
+  to{
+    transform: translateX(0px)
+  }
+}

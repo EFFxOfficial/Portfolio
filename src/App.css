@@ -1,0 +1,13 @@
+.page__backtotop{
+    background: var(--back-get-started);
+    color: white;
+    width: max-content;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    display: none;
+}

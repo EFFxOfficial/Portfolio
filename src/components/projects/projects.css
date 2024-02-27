@@ -1,0 +1,127 @@
+.projects__container{
+    background: var(--background-opposite);
+    position: relative;
+}
+
+.projects__container-banner{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100ch;
+    width: 100%;
+    background-image: url('../../assets/projects/banner.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: .1;
+}
+
+.project__contaner-arrow{
+    position: absolute;
+    top: -14px;
+    left: 50%;
+}
+
+.projects__container-projects-list{
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.projects__container-projects{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    justify-items: center;
+    gap: 4rem;
+
+    max-width: 80%;
+    margin-inline: auto;
+}
+
+.projects__container-cards_container-img img{
+    width: 100%;
+}
+
+.projects__container-cards_container{
+    width: 410px;
+    background: var(--background-projects);
+    color: var(--font-color-projects);
+    font-family: var(--font-family);
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 1500ms;
+    box-shadow: 10px 5px 30px var(--project-box-shadow);
+}
+
+.visible{
+    animation: from-bottom 1500ms ease forwards;
+}
+
+@keyframes from-bottom{
+    from{
+        transform: translateY(1000px)
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px)
+    }
+}
+
+.projects__container-cards_container-description{
+    margin-block: 1rem;
+    padding-inline: 1rem;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.projects__container-cards_container-description h1{
+    font-size: clamp(1.3rem, 2.8vw, .7vw);
+}
+
+.projects__container-cards_container-description span{
+    font-size: clamp(.85rem, 2vw, .7vw)
+}
+
+.projects__container-cards_container-description a{
+    background: var(--back-get-started);
+    padding: 1rem 3rem;
+    margin: 1rem auto;
+    font-family: var(--font-family);
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    width: max-content;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 1236px){
+    .projects__container-cards_container, 
+    .projects__container-projects {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 1050px){
+    .projects__container-projects {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+    }
+
+    .projects__container-cards_container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 540px){
+    .projects__container-cards_container {
+        width: 100%;
+    }
+}
